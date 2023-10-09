@@ -1,0 +1,198 @@
+    1  cd/
+    2  mkdir czh
+    3  cd zch/
+    4  ls
+    5  ls /
+    6  ls /c
+    7  cd /czh/
+    8  ls
+    9  cd /
+   10  cd/
+   11  clear
+   12  mkdir
+   13  ls c
+   14  cat
+   15  mkdir
+   16  touch czh
+   17  touch
+   18  cd
+   19  ls
+   20  history
+   21  cd
+   22  cd cqq/
+   23  mkdir cqq
+   24  cd cqq/
+   25  cp d/git/book/* .
+   26  cp d/Git/book* .
+   27  ls d/git/book/* '
+   28  cp d/git/book/* .-r
+   29  ls
+   30  clear
+   31  cd/
+   32  mkdir cqq
+   33  cd cqq/
+   34  ls
+   35  ls/
+   36  cd cqq
+   37  cd ..
+   38  ls
+   39  cd cqq
+   40  ls/d/Git/book/
+   41  ls
+   42  cd cqq
+   43  cd cqq/
+   44  cd
+   45  cd cqq/
+   46  ls
+   47  ls/d/git/book/
+   48  ls/d/Git/book/
+   49  cd
+   50  cd d
+   51  cd c
+   52  ls
+   53  pw
+   54  pwd
+   55  mkdir test2023
+   56  cd test 2023
+   57  touch test.py
+   58  clear
+   59  cd
+   60  ls
+   61  mkdir czh
+   62  cd
+   63  mkdir czh
+   64  mkdir czh
+   65  mkdir chenzh
+   66  cd chenzh/
+   67  chenzh/
+   68  cp/d/
+   69  cp/d/git/chenh
+   70  cp/d/git/chenzh
+   71  cp/D/Git/chenzh
+   72  cp d/Git/book . -r
+   73  cd
+   74  cd chenzh/
+   75  cp d/git/book . -r
+   76  cp d/git/book/* .
+   77  ls d/git/book/* .
+   78  ls
+   79  ls /d/Git/book/
+   80  mddir pdf
+   81  mkdir pdf
+   82  cd pdf
+   83  cd ..
+   84  ls
+   85  cp /d/Git/book/* pdf
+   86  ls pdf
+   87  ls 
+   88  ls -S
+   89  ls -s
+   90  ls -a -s
+   91  ls
+   92  rmdir pdf
+   93  rmdir pdf -S
+   94  rmdir pdf -s
+   95  ls
+   96  rm pdf/*
+   97  rddir pdf
+   98  rmdir pdf
+   99  ls
+  100  cp /d/Git/book/*
+  101  cp /d/Git/book/*.
+  102  cp /d/Git/book/*. -r
+  103  mkdir pdf
+  104  cd pdf
+  105  cp /d/Git/book/*
+  106  cp /d/Git/book/* .
+  107  ls
+  108  history
+  109  history>home.txt
+  110  ls
+  111  history
+  112  ls
+  113  history
+  114  history >1.txt
+  115  ls
+  116  ls d
+  117  cd/
+  118  ls/c
+  119  mkdir cczh
+  120  cd cczh
+  121  cd d
+  122  cd ..
+  123  cd..
+  124  cd cczh
+  125  cp/d/
+  126  cp/d/git/cczh
+  127  cp d/git/book/* .
+  128  ls d/git/book/* .
+  129  cd /d/
+  130  mkdir cqq
+  131  cd cqq
+  132  cd ..
+  133  cd git
+  134  mkdir qqc
+  135  cd qqc
+  136  cp /d/git/book/*
+  137  cp/d/git/book/* .
+  138  ls/d/git/book/8
+  139  ls/d/git/book/*
+  140  ls/d/git/book/* .
+  141  ls
+  142  ls/d/git/book/* . -r
+  143  cd ..
+  144  ls/d/git/book/*
+  145  ls/d/git/book/* .
+  146  ls /d/Git/book/
+  147  ls
+  148  cp /d/Git/book/* cqq
+  149  cp/d/Git/book/* qqc
+  150  cd qqc
+  151  cd ..
+  152   ls
+  153  cp /d/Git/book/* qqc
+  154  ls qqc
+  155  ls
+  156  ls -s
+  157  ls -s
+  158  ls-a-s
+  159  ;s
+  160  ls
+  161  history
+  162  cd ..
+  163  history >1.txt
+
+
+
+what is the shell?
+
+1:当启动git bash时 
+[me@linuxbox~]$
+该符号被称为shell提示符，当输入没有任何意义的命令时，shell 将会表达 （command not found）
+2命令历史记录 
+我们运用向上符号时 上一条命令将会重新出现， 如果运用向下符号则前面的命令将会消失。
+3光标移动
+左右箭头可以使用=编辑命令更加简单
+4复制与粘贴
+ctrl+c 与ctrl+v在终端窗口内将不被执行，因为他们对shell有不同的含义。
+5 date cal df free exit
+date：显示当前的时间与日期
+cal: 显示当前月份的日历
+df：查看当前磁盘的可用空间量。
+free： 显示空闲内存量
+exit ：将会终结终端会话，关闭git bash  
+                                                                           navigation
+
+1：文件系统树
+文件系统中的第一个目录被称为根目录，根目录包括文件已经子目录，子目录包扩更多的文件与子目录。
+2： ls命令
+ls可以列出任何目录内容
+3：cd 命令
+更改我们的工作目录，输入cd，后跟想要的工作目录的路径名。
+路径名：绝对路径名 相对路径名
+ 4：cd cd.. cd user_name
+cd: 将工作目录改为你的主目录，
+cd .. ：将工作目录改为上一个1工作目录 
+cd user_name 将工作目录改为user_name的主目录。
+
+
