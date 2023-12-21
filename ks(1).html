@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>学习系统</title>
+  <style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+	}
+    body{
+      	background-color: #f8f8f8;
+	  	width: 100%;
+	  	height: 100%;
+    }
+	button{
+	  	font-size:16px;
+	  	width:60px;
+	  	border: 0;
+	  	margin: 0;
+	}
+	button:hover{
+		background-color: rgba(90,90,90,0.5);
+	}
+	div#duration input{
+	  	font-size:1em;
+	  	left: 2em;
+	  	width:114px;
+	  	background-color: white;
+	}
+	div#duration{
+	  	top: 5em;
+		position: relative;
+		margin-left: 15%;
+	}
+	div#audioduration input{
+	  	width: 270px;
+	  	height: 40px;
+	  	font-size:14px;
+	  	background-color:white;
+	  	margin-left: 10%;
+	  	margin-top: 5%;
+	} 
+	div#audioduration input:hover{
+		background-color: rgba(90,90,90,0.5);
+	}
+	div#audioduration{
+		margin-top: 5%;
+    	text-align: left;
+    	position: relative;
+    	margin-left: 25%;
+    	width: 800px;
+    	margin-bottom: 10%;
+	}
+	button#switch{
+	  	border-radius: 10% ;
+	  	background-color:green ;
+	  	color : white;
+	  	cursor: pointer; 
+	}
+   div#logo{
+		font-size: 20px;
+    	float: right;
+    	position: relative;
+    	border-top-left-radius: 10px;
+    	border-top-right-radius: 10px;
+   }
+    div#time{
+		top:0px;
+		font-size: 20px;
+    	position: relative;
+    	border-top-left-radius: 10px;
+    	border-top-right-radius: 10px;
+    	/* transition过渡动画：设置top属性过渡，过渡时间0.3s,速度曲线为ease(逐渐变慢) */
+   		float: right;
+   }
+   
+    div#UI{
+	 	position:relative ;
+	 	top: 5em;
+	 	margin: 0;
+	 	width: 1000px;
+	 	left: 15%;
+	}
+	div#stage{
+		top: 5em;
+		position:relative;
+	}
+	#play{
+		float: left;
+	}
+	audio#myAudio{
+		box-sizing: border-box;
+		height: 25%;
+	}
+	#coverwrap {
+        width: 200px;
+        height: 200px;
+        border: 40px solid #000000;
+        border-radius: 50%;
+        overflow: hidden;
+		margin-left: 40%;
+    }
+
+    @keyframes playmusic {
+
+        /* 起始位置 */
+        from {
+            transform: rotate(0deg);
+            }
+
+         /* 结束位置 */
+        to {
+            transform: rotate(360deg);
+            }
+    }
+
+    .cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        /* 动画属性 */
+        animation-name: playmusic;
+        animation-duration: 4s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+	.cover:hover{
+		animation-play-state:paused;
+	}
+
+	h2{
+		text-shadow:-1px -1px #fff,1px 1px #333;
+        color:#ccc;
+		font-size: 25px;
+		text-align: center;
+	}
+	p{
+		font-size: 25px;
+	}
+	.container{
+		height: 20px;
+	}
+	h1{
+		text-align: center;
+	}
+	img {
+    	float: left;
+    	margin-left: 12%;
+		margin-top: 3%;
+		}
+	p {
+    	font-size: 25px;
+    	float: left;
+    	padding-top: 22%;
+		}
+  </style>
+  <script src = "ks.js">
+  </script>
+  </head>
+  <body>
+
+  <div  id="header">
+   	<h1>JavaWeb第三组LinuxCMD-1.mp3</h1>
+	<div id="photo"></div>
+  </div>
+
+  <div id="stage">
+     <audio id = "myAudio" ></audio>
+	 <video  id="myVideo" style="width: 1024px; height: 576px; margin-left: 15%; "></video>
+  </div>
+
+  <div id="duration"></div>
+
+  <div  id="UI" >
+	<div class="btn-group" role="group" aria-label="...">
+		<div style="float: left; ">
+			<button id="play" class="btn btn-default"><span class="glyphicon glyphicon-play"></button>
+			<button id="pause" class="btn btn-default"><span class="glyphicon glyphicon-pause"></button>
+		</div>
+		<div id="time"></div>
+    </div>
+		<div style="float: right; ">
+    		<button id="previous" class="btn btn-default"><span class="glyphicon glyphicon-step-backward"></button>
+    		<button id="next" class="btn btn-default"><span class="glyphicon glyphicon-step-forward"></button>
+			<div  id="logo"></div>
+    		<button id="switch"  class="btn btn-default">视频</button>
+		</div>
+  </div>
+
+  <div id="coverwrap" style="visibility: hidden;">
+		<img class="cover"
+			src="https://img2.baidu.com/it/u=449237825,4086220496&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=707">
+  </div>
+
+  <div id="audioduration" style="visibility: hidden;"></div>
+
+  <nav class="navbar navbar-default navbar-fixed-bottom" style="  background-color: rgba(90,90,90,0.5);">
+  		<div class="container">
+    		<h2>江西科技师范大学元宇宙产业学院&nbsp;&nbsp;&nbsp;21级Java软件开发实训2班</h2>
+  		</div>
+  </nav>
+  <script>
+  //建立Model模拟播放对象，管理对象的一切属性和行为
+  var Model = {
+	 index:0,
+	 i : 0 ,
+	 isVideo : true ,
+	 UI : {
+	    stageDom : document.getElementById("stage") ,
+        videoDom : document.getElementById("myVideo") ,
+        timeDom : document.getElementById("time"), 
+		audioDom : document.getElementById("myAudio"),
+		logoDom : document.getElementById("logo") ,
+		coverwrapDom: document.getElementById("coverwrap"),
+		photoDom: document.getElementById("photo"),
+		 //下面是按钮
+        playDom : document.getElementById("play") ,
+		pauseDom : document.getElementById("pause") ,
+        prevDom : document.getElementById("previous") ,
+        nextDom : document.getElementById("next") ,
+		switchDom : document.getElementById("switch") ,
+		  } ,
+      play : function(){
+	    Model.isVideo ?  Model.UI.videoDom.play() :  Model.UI.audioDom.play() ;
+		Model.mediaInfo() ;
+		Model.timeInfo();
+	  },
+	  pause :function(){
+	   Model.isVideo ?  Model.UI.videoDom.pause() :  Model.UI.audioDom.pause() ;
+	  },
+      prev :function(){
+		if(Model.isVideo){
+			if (Model.i==0)
+			{
+				Model.i = mediaData.videoFileNames.length-1;
+			}else{
+			Model.i--;
+			}
+		}else{
+			if(Model.index==0){
+				Model.index=mediaData.podFileStruct.length-1;
+			}else{
+				Model.index--;5
+			}
+		}
+
+		 Model.loadMedia() ;
+		  Model.play() ;
+	  },
+	  next :function(){
+		if(Model.isVideo){
+			if(Model.i==mediaData.videoFileNames.length-1){
+			Model.i=0;
+		}else{
+			 Model.i ++ ;
+			}
+		
+		}else{
+			if(Model.index==mediaData.podFileStruct.length-1){
+				Model.index=0;
+			}else{
+				Model.index++;
+			}
+		}
+		Model.loadMedia() ;
+		Model.play() ;
+	  },
+	  mediaInfo : function(){
+		 let mediaNum = Model.isVideo ? mediaData.videoFileNames.length  : mediaData.podFileStruct.length ;
+		 if(Model.isVideo){
+			Model.UI.logoDom.textContent =  'NO.'+(Model.i+1) + '/' + mediaNum	  ;
+		}else{
+			Model.UI.logoDom.textContent= mediaData.podFileStruct[Model.index].fileName;
+		}
+	     
+	  } , 
+	  timeInfo : function(){
+		window.setInterval(function(){
+			let mediaTime =Model.isVideo ? Model.UI.videoDom.duration  : Model.UI.audioDom.duration ;	
+			mediaTime = parseInt(mediaTime) ;	 
+			let currentTime = Model.isVideo ? Model.UI.videoDom.currentTime  : Model.UI.audioDom.currentTime  ;
+			currentTime = parseInt(currentTime) ;
+			Model.UI.timeDom.textContent =  currentTime + ' s' + '/' + mediaTime	+ ' s' 
+		},1000)
+		 }
+	   , 
+     
+	 loadMedia : function(){
+	   let i = Model.i ;
+	   if (Model.isVideo) {
+         Model.UI.videoDom.src =mediaData.videoPath +  mediaData. videoFileNames[i]  ;
+	   }else{
+	   Model.UI.audioDom.src =  mediaData.podPath +  mediaData.podFileStruct[Model.index].fileName ;
+	   }
+	   Model.timeInfo();
+	   Model.mediaInfo();
+	 },
+	  init  : function(){
+          
+      //预读媒体文件
+       
+	   Model.loadMedia(0) ;
+    
+	   //初始化UI的控件的onclick属性
+    Model.UI.playDom.onclick = function(){
+        Model.play() ;
+	  } ;
+
+	Model.UI.pauseDom.onclick = function(){
+       Model.pause() ;
+	} ;
+    Model.UI.prevDom.onclick = function(){
+	  Model.prev();
+	} ; 
+	Model.UI.nextDom.onclick = function(){
+	  Model.next();
+	} ; 
+	Model.UI.switchDom.onclick = function(){
+	  Model.isVideo = ! Model.isVideo ;
+      Model.UI.switchDom.textContent =  Model.isVideo  ? "视 频" : "音 频 " ;
+	  if (! Model.isVideo) {
+	   Model.UI.stageDom.removeChild(Model.UI.videoDom) ;
+	   Model.loadMedia();
+	   Model.UI.durationDom.style.visibility="hidden";
+	   Model.UI.coverwrapDom.style.visibility="";
+	   Model.UI.audiodurationDom.style.visibility="";
+	  }else{
+		Model.UI.audioDom.pause();
+	   Model.UI.stageDom.appendChild(Model.UI.videoDom) ;
+	   Model.loadMedia();
+	   Model.UI.durationDom.style.visibility="";
+	   Model.UI.coverwrapDom.style.visibility="hidden";
+	   Model.UI.audiodurationDom.style.visibility="hidden";
+	  }
+
+	} ; 
+ 
+	  }//init 结束 ,
+
+
+  } ; //Model 结束
+  Model.init() ;
+  Model.UI.durationDom=document.getElementById("duration");
+  Model.UI.durationDom.items=[];
+  for (let i = 0; i < 9; i++) {
+	let tempDom=document.createElement("input");
+	tempDom.type="button";
+	tempDom.value+="NO."+(i+1);
+	Model.UI.durationDom.items[i]=tempDom;
+	Model.UI.durationDom.appendChild(tempDom);
+	Model.UI.durationDom.items[i].onclick=function(){
+        let myMedia=Model.UI.videoDom;
+		myMedia.currentTime=i*myMedia.duration/9;	
+	}
+   }
+  Model.UI.audiodurationDom=document.getElementById("audioduration");
+  Model.UI.audiodurationDom.items=[];
+  for (let i = 0; i < 8; i++) {
+	let tempDom=document.createElement("input");
+	tempDom.type="button";
+	tempDom.value=mediaData.podFileStruct[0].title[i];
+	Model.UI.audiodurationDom.items[i]=tempDom;
+	Model.UI.audiodurationDom.appendChild(tempDom);
+	Model.UI.audiodurationDom.items[i].onclick = function() {  
+	Model.UI.audioDom.currentTime = mediaData.podFileStruct[0].time[i][0];
+	Model.play();
+	let endTime = mediaData.podFileStruct[0].time[i][1];                
+    let checkTime = setInterval(() => {  
+		if (Model.UI.audioDom.currentTime >= endTime) {  
+			Model.UI.audioDom.pause();                                      
+			clearInterval(checkTime);                                  
+		}  
+	}, 1000);                                                      
+	 };   
+  }
+
+  Model.UI.photoDom.photoitems=[];
+  Model.UI.photoDom.nameitems=[]; 
+  for(let i=0; i<5; i++){
+	let tempDom=document.createElement("img");
+	let ptempDom=document.createElement("p");
+	tempDom.src=mediaData.photoPath+mediaData.photoStruct[0].photoName[i];
+	tempDom.style.width="192px";
+	tempDom.style.height="256px";
+	ptempDom.textContent=mediaData.photoStruct[0].peopleName[i];
+	Model.UI.photoDom.appendChild(tempDom);
+	Model.UI.photoDom.appendChild(ptempDom);
+  }
+  </script>
+ </body>
+</html>
